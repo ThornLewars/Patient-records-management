@@ -1,0 +1,191 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- css files --> 
+<link href="CSS/New_patient_style.css" rel="stylesheet" type="text/css" media="all" /> 
+<link href="CSS/Index-style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- /css files --><meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-
+  scale=1.0">
+
+     <title> New-Patient</title>
+</head>
+   <body>
+   <nav>
+   <label class="logo">People caring for People</label>
+   <ul>
+    <li><a class="#"href="Index.html">Home</a></li>
+    <li><a class="active" href="Newpatient.html">Register Patient</a></li>
+    <li><a class="#"href="Update.php">Update Patient</a></li>
+    <li><a class="#" href="Schedule.html">Schedule Appointment</a></li>
+    <li><a class="#" href="Retrieve.php">Retrieve Patient Record</a></li>
+  </ul>
+  <label id="icon">
+  <i class="fas fa-bars"></i>
+  </label>
+ </nav>
+<div class="container">  
+     <div class="title"> 
+	    <h4>Patient's Information<h4>
+		</div>
+     <form action="Register.php" method="POST"> 
+	
+    <div class="Patient-details">
+      <div class="input-box">
+        <span class="details">Firstname</span>
+          <input type="text" placeholder= "Firstname" name="Firstname" required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Lastname</span>
+          <input type="text" placeholder= "Lastname" name="Lastname"required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Middlename</span>
+          <input type="text" placeholder= "Middlename" name="Middlename" required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Telephone</span>
+          <input type="text" placeholder= "Telephone" name="Phone"required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Alternative Telephone (Cell,Work)</span>
+          <input type="text" placeholder= "Alternative Telephone" name="Alt_Phone">
+       </div>
+	   <div class="input-box">
+        <span class="details">Email Address</span>
+          <input type="text" placeholder= "Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="Email" required>
+       </div>
+	 
+	   <div class="input-box">
+        <span class="details">Address</span>
+          <input type="text" placeholder= "Address" name="Address"required>
+       </div>
+	   <div class="input-box">
+        <span class="details">City</span>
+          <input type="text" placeholder= "City" name="City" required>
+       </div>
+	   <div class="input-box">
+        <span class="details">State</span>
+          <input type="text" placeholder= "State" name="State" >
+       </div>
+	   <div class="input-box">
+        <span class="details">Country</span>
+          <input type="text" placeholder= "Country" name="Country"required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Date of birth</span>
+          <input type="text" placeholder= "DOB (yyyy\dd\mm)" pattern="/\d{4}/\d{1,2}/\d{1,2}" class="datepicker" name="DOB" value="" />
+       </div>
+	   <div class="input-box">
+        <span class="details">TRN/SSN/CIN</span>
+          <input type="text" placeholder= "TRN/SSN/CIN" name="TRN" required>
+       </div>
+     </div>
+	   <div class="gender-details">
+	   <input type="radio" name="Gender" value="Male"id="dot-1">
+	   <input type="radio" name="Gender" value="Female"id="dot-2">
+	   <span class="gender-title">Gender</span>
+	     <div class="category">
+	  <label for="dot-1">
+	   <span class="dot one"></span>
+	    <span class="gender">Male</span>
+	   </label>
+	  <label for="dot-2">
+	    <span class="dot two"></span>
+	     <span class="gender">Female</span>
+      </label>
+    </div>
+	</div>
+	<div class="status-details">
+	   <input type="radio" name="Status" value="Married"id="dot-1-1">
+	   <input type="radio" name="Status" value="Single"id="dot-2-1">
+	   <input type="radio" name="Status" value="Divorced"id="dot-3-1">
+	   <input type="radio" name="Status" value="Widowed"id="dot-4-1">
+	   <span class="status-title">Marital Status</span>
+	     <div class="category">
+	  <label for="dot-1-1">
+	   <span class="dot one-1"></span>
+	    <span class="Status"value="MArried">Married</span>
+	   </label>
+	  <label for="dot-2-1">
+	    <span class="dot two-1"></span>
+	     <span class="Status" value="Single">Single</span>
+      </label>
+	  <label for="dot-3-1">
+	    <span class="dot three-1"></span>
+	     <span class="Status" value="Divorced">Divorce</span>
+      </label>
+	  <label for="dot-4-1">
+	    <span class="dot four-1"></span>
+	     <span class="Stasus" value="Widowed">Widowed</span>
+      </label>
+    </div>
+	</div> 
+	<span class="Kin-title">Next of Kin</span>
+	<div class="Next-of-kin">
+      <div class="input-box">
+        <span class="details">First Name</span>
+          <input type="text" placeholder= "FirstName"name="Kin_Firstname" required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Last Name</span>
+          <input type="text" placeholder= "LastName"name="Kin_Lastname" required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Middle Name</span>
+          <input type="text" placeholder= "MiddleName" name="Kin_Middlename" required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Telephone</span>
+          <input type="text" placeholder= "Telephone" name="Kin_Phone"required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Email Address</span>
+          <input type="text" placeholder= "Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="Kin_Email">
+       </div>
+	   <div class="input-box">
+        <span class="details">Address</span>
+          <input type="text" placeholder= "Address" name="Kin_Address" required>
+       </div>
+	   <div class="input-box">
+        <span class="details">City</span>
+          <input type="text" placeholder= "City" name="Kin_City"required>
+       </div>
+	   <div class="input-box">
+        <span class="details">Country</span>
+          <input type="text" placeholder= "Country"name="Kin_Country">
+       </div>
+	    <div class="input-box">
+        <span class="details">Relationship</span>
+          <input type="text" placeholder= "Relationship"name="Relationship">
+       </div>
+	   </div>
+	   <span class="Ins-title">Insurance information</span>
+	<div class="Insurance">
+      <div class="input-box">
+        <span class="details">Insurance Company</span>
+          <input type="text" placeholder= "Company" name="Company">
+       </div>
+	   <div class="input-box">
+        <span class="details">Policy Number</span>
+          <input type="text" placeholder= "Policy number"name="Policy_Num">
+       </div>
+	   <div class="input-box">
+        <span class="details">Branch</span>
+          <input type="text" placeholder= "Branch"name="Branch">
+       </div>
+	   <div class="input-box">
+        <span class="details">Telephone</span>
+          <input type="text" placeholder= "Telephone"name="Ins_Phone">
+       </div>
+	   </div>
+  <div class="button">
+	<input type="Submit"value="Register patient">
+	</div>  
+	</div>
+	</form>
+ </body>
+</html>
