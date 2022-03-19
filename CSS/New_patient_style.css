@@ -1,0 +1,278 @@
+*{
+   margin:0;
+   padding:0;
+   box-sizing:border-box;
+   }
+   body{
+	   display:flex;
+	   height:100px;
+	   font-family:Roboto;
+	   padding:0;
+	   background:linear-gradient(135deg,#71b7e6,#fff);
+	   overflow-x:hidden;
+	   overflow-y:auto;
+   }
+ .container.title{
+	font-size:25px;
+	font-weight:500;
+	text-align:center;
+	position:relative;
+}
+ .container.title::before{
+	content:'';
+	position:absolute;
+	left:0;
+	bottom:0;
+	height:3px;
+	width:30px;
+}
+ .container form .Patient-details{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content: space-between;
+ 	 margin: 20px 0 12px ;
+ }
+ form .Patient-details .input-box{
+
+width: calc(100% / 2 - 20px);
+}
+.Patient-details .input-box input{
+	 height:40px;
+	 width:100%;
+	 outline:none;
+	 border-radius:5px;
+	 border:1px solid #ccc;
+	 padding:left 15px;
+	 font-size:16px;
+	 border-bottom-width: 2px;
+	 transition: all 0.3s ease;
+}
+.Patient-details .input-box input:focus,
+.Patient-details .input-box input:valid{
+	border-color: #71b7e6;
+	 
+}
+ .Patient-details .input-box .details{
+	font-weight:500px;
+	margin-bottom:5px;
+	display:block;	
+ }
+ 
+ form .gender-details .gender-title{
+ font-size:20px;
+ font-weight:500;
+ }
+ form .gender-details .category{
+	 width:80%;
+	 display:flex;
+	 margin:10px 10px;
+	 justify-content:start; 
+ }
+ .gender-details .category label{
+	 display:flex;
+	 align-items:start;
+	 margin:10px 10px;
+	 
+ }
+ .gender-details .category .dot {
+ height:18px;
+ width:18px;
+ background:#d9d9d9;
+ border-radius:50%;
+ margin-right:10px;
+ border:5px solid transparent;
+ transition:all 0.3s ease;
+ }
+ #dot-1:checked ~ .category label .one,
+  #dot-2:checked ~ .category label .two{
+ border-color:d9d9d9;
+ background:#71b7e6;
+ }
+ 
+ 
+ 
+ form .status-details .status-title{
+ font-size:20px;
+ font-weight:500;
+ }
+ form .status-details .category{
+	 width:80%;
+	 display:flex;
+	 margin:10px 10px;
+	 justify-content:start; 
+ }
+ .status-details .category label{
+	 display:flex;
+	 align-items:start;
+	 margin:10px 10px;
+ }
+ .status-details .category .dot {
+ height:18px;
+ width:18px;
+ background:#d9d9d9;
+ border-radius:50%;
+ margin-right:10px;
+ border:5px solid transparent;
+ transition:all 0.3s ease;
+ }
+ #dot-1-1:checked ~ .category label .one-1,
+  #dot-2-1:checked ~ .category label .two-1,
+  #dot-3-1:checked ~ .category label .three-1,
+  #dot-4-1:checked ~ .category label .four-1{
+ border-color:d9d9d9;
+ background:#71b7e6;
+ }
+ 
+ 
+ form .Kin-title{
+ font-size:20px;
+ font-weight:500;
+ }
+  .container form .Next-of-kin{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content: space-between;
+ 	 margin: 20px 0 12px ;
+ }
+ form .Next-of-kin .input-box{
+
+width: calc(100% / 2 - 20px);
+}
+.Next-of-kin .input-box input{
+	 height:40px;
+	 width:100%;
+	 outline:none;
+	 border-radius:5px;
+	 border:1px solid #ccc;
+	 padding:left 15px;
+	 font-size:16px;
+	 border-bottom-width: 2px;
+	 transition: all 0.3s ease;
+}
+.Next-of-kin .input-box input:focus,
+.Next-of-kin .input-box input:valid{
+	border-color: #71b7e6;
+	 
+}
+ .Next-of-kin .input-box .details{
+	font-weight:500px;
+	margin-bottom:5px;
+	display:block;	
+ }
+ 
+ 
+ form .Ins-title{
+ font-size:20px;
+ font-weight:500;
+ }
+  .container form .Insurance{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content: space-between;
+ margin: 20px 0 12px ;
+ }
+ 
+ form .Insurance .input-box{
+ width: calc(100%/2-20px);
+}
+
+.Insurance .input-box input{
+	 height:40px;
+	 width:100%;
+	 outline:none;
+	 border-radius:5px;
+	 border:1px solid #ccc;
+	 padding:left 15px;
+	 font-size:16px;
+	 border-bottom-width: 2px;
+	 transition: all 0.3s ease;
+}
+.Insurance .input-box input:focus,
+.Insurance .input-box input:valid{
+	border-color: #71b7e6;
+	 
+}
+ .Insurance .input-box .details{
+	font-weight:500px;
+	margin-bottom:5px;
+	display:block;	
+ }
+ 
+ form input[type="radio"]{
+ display:none;
+ }
+
+ .container{
+position: absolute;
+float:top;
+left: 50%;
+padding:40px 20px;
+transform: translate(-50%,-50%);
+max-width: 1000px;
+max-height:1430px;
+width:100%;
+background:#f8f7ff;
+border-radius:10px;
+font-family:Roboto;
+}
+ form .button{
+	 height:45px;
+	 margin:45px 0;
+}
+
+form .button input{
+	height:45px;
+	width:40%;
+	outline:none;
+	color:#fff;
+	border:none;
+	font-size:18px;
+	font-weight:500;
+	border-radius:5px;
+	background:#71b7e6;
+	position:absolute;
+	left:30%;
+}
+form .button input:hover{
+	background:#9b56c4;
+}
+@media (max-width: 584px){
+	.container{
+		max-width:100%;
+}
+form .Patient-details .input-box{
+	margin-bottom:15px;
+	width:100%;
+}
+}
+
+.container form .Search{
+ margin: 20px 0 12px ;
+ }
+ 
+ form .Search .input-box{
+ width: calc(100%/2-20px);
+ float:center;
+}
+
+.Search .input-box input{
+	 height:40px;
+	 width:40%;
+	 outline:none;
+	 border-radius:5px;
+	 border:1px solid #ccc;
+	 padding:left 15px;
+	 font-size:16px;
+	 border-bottom-width: 2px;
+	 transition: all 0.3s ease;
+}
+.Search .input-box input:focus,
+.Search .input-box input:valid{
+	border-color: #71b7e6;
+	 
+}
+ .Search .input-box .details{
+	font-weight:500px;
+	margin-bottom:5px;
+	display:block;	
+ }
