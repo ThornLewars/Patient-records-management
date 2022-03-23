@@ -21,7 +21,7 @@
 			}
 		}else {
 			
-			echo '<script> alert("Invalid username or pasword") </script>';
+			echo header('location: http://localhost/SIphp/Login.html');
 		}
 			
 	

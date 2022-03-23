@@ -55,7 +55,7 @@ $("#datepicker").datepicker();
 	 <div class="input-box">
 	<input type="text"id="datepicker"name="dtime" placeholder="Date">
 	</div>
-	<select name="Doctor">
+	<select name="Doctor" value="Doctor">
 	<option value="Doctor1">Doctor1</option>
 	<option value="Doctor2">Doctor2</option>
 	<option value="Doctor3">Doctor3</option>

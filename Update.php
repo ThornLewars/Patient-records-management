@@ -22,8 +22,9 @@
            <li><a class="#" href="Retrieve.php">Retrieve Patient Record</a></li>
         </ul>
      </nav> 
+	 <br>
+	 <br>
 	 <div class="container">
-
 		<center> 
 		<div class="title"> 
 	    <h4>Update patient's information<h4>

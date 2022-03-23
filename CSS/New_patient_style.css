@@ -5,7 +5,7 @@
    }
    body{
 	   display:flex;
-	   height:100px;
+	   height:1500px;
 	   font-family:Roboto;
 	   padding:0;
 	   background:linear-gradient(135deg,#71b7e6,#fff);
@@ -204,12 +204,12 @@ width: calc(100% / 2 - 20px);
 
  .container{
 position: absolute;
-float:top;
+top:800px;
 left: 50%;
 padding:40px 20px;
 transform: translate(-50%,-50%);
 max-width: 1000px;
-max-height:1430px;
+max-height:1500px;
 width:100%;
 background:#f8f7ff;
 border-radius:10px;
