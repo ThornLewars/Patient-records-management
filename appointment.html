@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang'"en" dir="ltr">
+ <head> 
+ <title>Appointment</title>
+<!-- css files --> 
+  <link href="CSS/Index-style.css" rel="stylesheet" type="text/css" media="all" /> 
+  <link href="CSS/schedule.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- /css files -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smootheness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery.1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<Link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+  <script>
+$(function(){
+$("#datepicker").datepicker();
+});
+</script>
+ </head>
+<body>
+<!--Navbar-->
+ <div class="navbar">
+  <a class="#"href="Index.html">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Appointment 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="active" href="appointment.html">Schedule Appointment</a>
+      <a class="#" href="retrieve-ap.php">View Appointments</a>
+    </div>
+	</div>
+  <div class="dropdown">
+    <button class="dropbtn">Patient 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="#" href="Newpatient.html">Register Patient</a>
+      <a class="#" href="Retrieve.php">View Patient</a>
+      <a class="#"href="Update.php">Update Patient</a>
+    </div>
+  </div>
+  <a class=""href="Login.php">logout</a>
+  </div>
+<!--Book appointment form-->
+ <div class="center">
+	 <form action="Bookap.php" method="POST"> 
+      <div class="title"> 
+	  <center>
+	    <h4>Book Appointment<h4>
+		</center>
+		</div>
+		<div class="Apointment-details">
+  <div class="input-box">
+    <input type="text" name="Firstname" placeholder="Patients Firstname">
+	</div>
+	<br>
+	 <div class="input-box">
+	<input type="text" name="Lastname" placeholder="Patients Lastname">
+	</div>
+	<br>
+	 <div class="input-box">
+	<input type="text" name="TRN" placeholder="Patients TRN">
+	 </div>
+	 <br>
+	 <div class="input-box">
+	<input type="date" id="datepicker"pattern="/\d{4}/\d{1,2}/\d{1,2}" name="Date" value="">
+	</div>
+		 <div class="input-box">
+	<input type="time" id="time" name="Time" value=""> 
+	</div>
+	<select name="Doctor">
+	<option value="Dr.Green">Dr.Green</option>
+	<option value="Dr.Robinson">Dr.Robinson</option>
+	<option value="Dr.Bailey">Dr.Bailey</option>
+	<option value="Dr.Wray">Dr.Wray</option>
+	<option value="Dr.Rajif">Dr.Rajif</option>
+	</select>
+	<br>
+		 </div> 
+		 <input type="submit" value="Book Appointment">
+		 </div>
+      </form>
+  
+ 
+  </body>
+ <html>

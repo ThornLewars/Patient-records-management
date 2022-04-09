@@ -27,7 +27,7 @@ border-radius:10px;
 	box-sizing: border-box;
 }
 input[type="submit"]{
-	width:100%;
+	width:30%;
 	height:40px;
 	border:1px solid white;
 	background:#71b7e6;
@@ -78,13 +78,36 @@ padding:10px;
  }
  select{
 	width:340px;
+	height:40px;
     background: #71b7e6;
     color: #fff;
 	margin-left:10px;
+	margin-top:10px;
     padding:0 10px;
-    font-size: 18px;
+    font-size: 14px;
 }
 select.option{
 	color: #000;
     padding: 0 10px;
+}
+form .Search{
+width: calc(100% / 2 - 0px);
+padding:10px
+
+}
+.Search .input-box input{
+	 height:40px;
+	 width:100%;
+	 outline:none;
+	 border-radius:5px;
+	 border:1px solid #ccc;
+	 padding:left 15px;
+	 font-size:16px;
+	 border-bottom-width: 2px;
+	 transition: all 0.3s ease;
+}
+.Search .input-box input:focus,
+.Search .input-box input:valid{
+	border-color: #71b7e6;
+	 
 }

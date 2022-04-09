@@ -5,6 +5,8 @@
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Airmill website, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!-- css files --> 
@@ -14,10 +16,13 @@
   <title> Login</title>
   </head>
   <body>
+  
   <div class="center">
-  <!--login form html-->
 	 <h1>Login</h1>
 	  <form action="login.php" method="post">
+	 
+	  <input type='hidden, name ='hidden' value='".$atmp."'>";
+	   
 	   <div class="txt_field">
 		  <input type="Username" id="Username"class="form-control" name="Username" required>
 		  <span></span>

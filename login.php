@@ -7,7 +7,7 @@
 	if($con->connect_error) {
 		die("Failed  to connect :".$con->connect_error);
 	}else {
-		$stmt = $con->prepare ("select * from credentials where Username = ?");
+		$stmt = $con->prepare ("select * from credentials WHERE Username = ?");
 		$stmt->bind_param("s", $username);
 		$stmt->execute();
 		$stmt_result = $stmt->get_result();
@@ -20,10 +20,8 @@
 			
 			}
 		}else {
-			
 			echo header('location: http://localhost/SIphp/Login.html');
-		}
-			
+		}		
 	
 	}
 ?>

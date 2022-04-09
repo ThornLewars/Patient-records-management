@@ -14,25 +14,38 @@
      <title> Retrieve-Patient</title>
 </head>
    <body>
-   <nav>
-   <label class="logo">People caring for People</label>
-   <ul>
-    <li><a class="#"href="Index.html">Home</a></li>
-    <li><a class="#" href="Newpatient.html">Register Patient</a></li>
-    <li><a class="#"href="Update.php">Update Patient</a></li>
-    <li><a class="#" href="Schedule.html">Schedule Appointment</a></li>
-    <li><a class="active" href="Retrieve.php">Retrieve Patient Record</a></li>
-  </ul> 
-  <label ID="icon">
-  <i class="fas fa-bars"></i>
-  </label>
- </nav>
+   <!--Nav bar-->
+  <div class="navbar">
+  <a class=""href="Index.html">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Appointment 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="#" href="appointment.html">Schedule Appointment</a>
+      <a class="#" href="retrieve-ap.php">View Appointments</a>
+    </div>
+	</div>
+  <div class="dropdown">
+    <button class="dropbtn">Patient 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="#" href="Newpatient.html">Register Patient</a>
+      <a class="active" href="Retrieve.php">View Patient</a>
+      <a class="#"href="Update.php">Update Patient</a>
+    </div>
+  </div>
+  <a class=""href="Login.php">logout</a>
+  </div>
+  
  
  <div class="container">
+<!--search Patients information  form-->
 
 		<center> 
 		<div class="title"> 
-	    <h4>Patient's Information<h4>
+	    <h4>Retrieve Patient's Information<h4>
 		</div>
  <form action="retrieve.php" method="POST">
 <div class="Search">
@@ -45,7 +58,7 @@
 	 </div>
  </form>
  </center>
- 
+ <!--Create connection for searching database using TRN-->
  <?php
  $connection = mysqli_connect("localhost","root","");
  $db = mysqli_select_db($connection,'khp');
@@ -60,7 +73,7 @@
    while($row = mysqli_fetch_array($query_run))
     {
       ?>
-	  
+	  <!--Outputs information in the following form if found-->
 	      <form action="" method="POST">
 		  <div class="Patient-details">
 			   <div class="input-box">
@@ -69,7 +82,7 @@
 			  </div>
 			   <div class="input-box">
 			   <span class="details">LastName</span>
-			  <input type="none" name="Lastname" value="<?php echo $row['Lastname']?>"readonly />
+			  <input type="text" name="Lastname" value="<?php echo $row['Lastname']?>"readonly />
 			  </div>
 			   <div class="input-box">
 			   <span class="details"> MiddleName</span>
@@ -189,12 +202,9 @@
 	       </form>
 		   </div> 
 		   </div>
-	  <?php
-	  
+	  <?php 
     }
  }
 ?>
- 
- 
  </body>
 </html>

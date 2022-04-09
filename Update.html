@@ -12,16 +12,30 @@
      <title> Update-Patient</title>
 </head>
    <body>
-     <nav>
-      <label class="logo">People caring for People</label>
-      <ul>
-       <li><a class="#" href="Index.html">Home</a></li>
-        <li><a class="#" href="Newpatient.html">Register Patient</a></li>
-         <li><a class="active" href="Update.html">Update Patient</a></li>
-          <li><a class="#" href="Schedule.html">Schedule Appointment</a></li>
-           <li><a class="#" href="Retrieve.php">Retrieve Patient Record</a></li>
-        </ul>
-     </nav> 
+     <div class="navbar">
+  <a class="active"href="Index.html">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Appointment 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="#" href="appointment.html">Schedule Appointment</a>
+      <a class="#" href="retrieve-ap.php">View Appointments</a>
+    </div>
+	</div>
+  <div class="dropdown">
+    <button class="dropbtn">Patient 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="#" href="Newpatient.html">Register Patient</a>
+      <a class="#" href="Retrieve.php">View Patient</a>
+      <a class="active"href="Update.php">Update Patient</a>
+    </div>
+  </div>
+  <a class=""href="Login.php">logout</a>
+  </div>
+  
 	 <div class="container">
 
 		<center> 
@@ -39,7 +53,7 @@
 	 </div>
  </form>
  <?php
-   $connection =mysqli_connect("localhost","root","");
+   $connection = mysqli_connect("localhost","root","");
    $db = mysqli_select_db)$connection,'khp');
    
     if(isset($_POST['search']))
@@ -179,7 +193,7 @@
        </div>
 	   </div>
 	    <div class="button">
-	<input type="Submit"value="Update patient">
+	<input type="Submit" name="update" value="Update patient">
 	</div>
 	       </form>
 		   </div> 

@@ -12,16 +12,31 @@
      <title> Update-Patient</title>
 </head>
    <body>
-     <nav>
-      <label class="logo">People caring for People</label>
-      <ul>
-       <li><a class="#" href="Index.html">Home</a></li>
-        <li><a class="#" href="Newpatient.html">Register Patient</a></li>
-         <li><a class="active" href="Update.php">Update Patient</a></li>
-          <li><a class="#" href="Schedule.html">Schedule Appointment</a></li>
-           <li><a class="#" href="Retrieve.php">Retrieve Patient Record</a></li>
-        </ul>
-     </nav> 
+   <!--Navbar-->
+     <div class="navbar">
+  <a class="#"href="Index.html">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Appointment 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="#" href="appointment.html">Schedule Appointment</a>
+      <a class="#" href="retrieve-ap.php">View Appointments</a>
+    </div>
+	</div>
+  <div class="dropdown">
+    <button class="dropbtn">Patient 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="#" href="Newpatient.html">Register Patient</a>
+      <a class="#" href="Retrieve.php">View Patient</a>
+      <a class="active"href="Update.php">Update Patient</a>
+    </div>
+  </div>
+  <a class=""href="Login.php">logout</a>
+  </div>
+  
 	 <br>
 	 <br>
 	 <div class="container">
@@ -30,6 +45,7 @@
 	    <h4>Update patient's information<h4>
 		</div>
  <form action="update.php" method="POST">
+ <!-- Search patient info form-->
 <div class="Search">
       <div class="input-box">
       <input type="text" class="searchTerm" name="ID" placeholder="Search patient TRN to Update" style= input>
@@ -40,6 +56,7 @@
 	 </div>
  </form> 
  </center>
+ <!--Function to search database-->
  <?php
    $connection =mysqli_connect("localhost","root","");
    $db = mysqli_select_db($connection,'khp');
@@ -48,13 +65,14 @@
 	{
 	   $TRN =$_POST['ID'];
 	
-	   $query ="SELECT * FROM patients WHERE TRN='$TRN' ";
+	   $query = "SELECT * FROM patients WHERE TRN='$TRN' ";
 	   $query_run =mysqli_query($connection,$query);
 	
 	   while($row = mysqli_fetch_array($query_run))
 	{
 	
 	  ?>
+	     <!--Returns patient info if found-->
 	   <form action="" method="POST">
 		  <div class="Patient-details">
 			   <div class="input-box">
@@ -110,7 +128,7 @@
 	     <div class="category">
 		 <div class="input-box">
         <span class="details">Gender</span>
-          <input type="text"name="Gender" value="<?php echo $row['Gender']?>" >
+          <input type="text"name="Gender" value="<?php echo $row['Gender']?>" readonly >
        </div>
     </div>
 	</div>
@@ -181,7 +199,7 @@
        </div>
 	   </div>
 	    <div class="button">
-	<input type="Submit"name= "update"value="Update patient">
+	<input type="Submit" name="update" value="Update patient">
 	</div>
 	       </form>
 		   </div> 
@@ -192,42 +210,18 @@
 	}
  ?>
 
-	</body>
+</body>
 </html>
-
+<!--update info in database-->
 <?php
-$connection =mysqli_connect("localhost","root","");
+$connection = mysqli_connect("localhost","root","");
    $db = mysqli_select_db($connection,'khp');
 
  if(isset($_POST['update']))
  {
- $Lastname = $_POST['Lastname'];
- $Middlename = $_POST['Middlename'];
- $Phone = $_POST['Phone'];
- $Alt_Phone = $_POST['Alt_Phone'];
- $Email = $_POST['Email'];
- $Address = $_POST['Address'];
- $City = $_POST['City'];
- $State = $_POST['State'];
- $Country = $_POST['Country'];
- $Gender = $_POST['Gender'];
- $Status = $_POST['Status'];
- $DOB =$_POST['DOB'];
- $Kin_Firstname = $_POST['Kin_Firstname'];
- $Kin_Lastname = $_POST['Kin_Lastname'];
- $Kin_Middlename = $_POST['Kin_Middlename'];
- $Kin_phone = $_POST['Kin_Phone'];
- $Kin_Email = $_POST['Kin_Email'];
- $Kin_Address = $_POST['Kin_Address'];
- $Kin_City = $_POST['Kin_City'];
- $Kin_Country = $_POST['Kin_Country'];
- $Relationship =$_POST['Relationship'];
- $Company = $_POST['Company'];
- $Policy_Num = $_POST['Policy_Num'];
- $Branch = $_POST['Branch'];
- $Ins_Phone = $_POST['Ins_Phone'];
- 
- $query = "UPDATE 'patients' SET Lastname='$_POST[Lastname]',DOB='$_POST[DOB]',Middlename='$_POST[Middlename]',Phone='$_POST[Phone]',Alt_Phone='$_POST[Alt_Phone]',Email='$_POST[Email]',Address='$_POST[Address]',City='$_POST[City]',State='$_POST[State]',Country='$_POST[Country]',Gender='$_POST[Gender]',Status='$_POST[Status]',Kin_Firstname='$_POST[Kin_Firstname]',Kin_Lastname='$_POST[Lastname]',Kin_Middlename='$_POST[Middlename]',Kin_Phone='$_POST[Kin_Phone]',Kin_Email='$_POST[Kin_Email]',Kin_Address='$_POST[Kin_Address]',Kin_City='$_POST[Kin_City]',Kin_Country='$_POST[Kin_Country]',Relationship='$_POST[Relationship]',Company='$_POST[Company]',Policy_Num='$_POST[Policy_Num]',Branch='$_POST[Branch]',Ins_Phone='$_POST[Ins_Phone]'where TRN='$_POST[TRN]'";
+	 $TRN =$_POST['TRN'];
+	 
+ $query = "UPDATE `patients` SET Lastname='$_POST[Lastname]',DOB='$_POST[DOB]',Middlename='$_POST[Middlename]',Phone='$_POST[Phone]',Alt_Phone='$_POST[Alt_Phone]',Email='$_POST[Email]',Address='$_POST[Address]',City='$_POST[City]',State='$_POST[State]',Country='$_POST[Country]',Gender='$_POST[Gender]',Status='$_POST[Status]',Kin_Firstname='$_POST[Kin_Firstname]',Kin_Lastname='$_POST[Lastname]',Kin_Middlename='$_POST[Middlename]',Kin_Phone='$_POST[Kin_Phone]',Kin_Email='$_POST[Kin_Email]',Kin_Address='$_POST[Kin_Address]',Kin_City='$_POST[Kin_City]',Kin_Country='$_POST[Kin_Country]',Relationship='$_POST[Relationship]',Company='$_POST[Company]',Policy_Num='$_POST[Policy_Num]',Branch='$_POST[Branch]',Ins_Phone='$_POST[Ins_Phone]'WHERE TRN='$_POST[TRN]'";
  $query_run = mysqli_query($connection,$query);
  
  if($query_run)
@@ -239,6 +233,5 @@ $connection =mysqli_connect("localhost","root","");
 	   echo '<script> alert("Unable to update patient data") </script>';
       }
    }
- 
 	 
 ?>

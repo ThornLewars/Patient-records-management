@@ -4,7 +4,6 @@
    box-sizing:border-box;
    }
    body{
-	   display:flex;
 	   height:1000px;
 	   font-family:Roboto;
 	   padding:0;
